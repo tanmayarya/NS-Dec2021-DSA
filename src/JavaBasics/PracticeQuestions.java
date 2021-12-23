@@ -19,24 +19,33 @@ public class PracticeQuestions {
 //		}
 
 		
-		int num = scn.nextInt();
-		
-		int val = 2;
-		
-	
-		while(val < num) {
-			if(num % val == 0) {
-				break;
+		// Find if a number is Prime or not
+		  int T = scn.nextInt();
+		  int i = 1;
+
+		  while(i <= T) {
+
+			  int num = scn.nextInt();
+			  int val = 2;
+			  boolean isPrime = true;
+			
+			while(val * val <= num) {
+				if(num % val == 0) {
+					isPrime = false;
+					break;
+				}
+				
+				val = val + 1;
 			}
-			val = val + 1;
-		}
-		
-		if(val == num) {
-			System.out.println("Prime");
-		}else {
-			System.out.println("Not Prime");
-		}
-		
+
+			if(isPrime == true) {
+				System.out.println("Yes");
+			} else {
+				System.out.println("No");
+			}
+
+			  i = i+1;
+		  }		
 		
 		
 	}

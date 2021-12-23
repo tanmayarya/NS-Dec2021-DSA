@@ -1,6 +1,6 @@
 package JavaBasics;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Basics {
 	
@@ -86,21 +86,22 @@ public class Basics {
 		 
 		
 		int count = 1;
-		int endValue = scn.nextInt();
+		int n = scn.nextInt();
 		
-		int a = scn.nextInt();
-		int b = scn.nextInt();
+//		int a = scn.nextInt();
+//		int b = scn.nextInt();
+//		
+//		System.out.println(a);
+//		System.out.println(b);
+//		
 		
-		System.out.println(a);
-		System.out.println(b);
 		
+		while(count <= n) {
+			System.out.println(count);
+			count = count + 1;
+			
+		}
 		
-		
-//		while(count <= endValue) {
-//			System.out.println(count);
-//			count = count + 1;
-//			
-//		}
 		
 		
 		
