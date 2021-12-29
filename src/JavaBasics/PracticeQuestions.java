@@ -48,29 +48,27 @@ public class PracticeQuestions {
 //		  }		
 		
 		// count number of primes from 1 to n
-//		int n = scn.nextInt();
-//
-//        int count = 0;
-//        int numToCheck = 2;
-//
-//        while (numToCheck <= n) {
-//              boolean isPrime = true;
-//              int val = 2;
-//              while (val * val <= numToCheck) {
-//                    if(numToCheck % val == 0) {
-//                          isPrime = false;
-//                          break;
-//                    }
-//                    val = val + 1;
-//              }
-//              if(isPrime == true) {
-//                    count = count + 1;
-//              }
-//              numToCheck = numToCheck + 1;
-//        }  
-//        System.out.println(count);         
-//		
-		
+		int n = scn.nextInt();
+
+        int count = 0;
+        int numToCheck = 2;
+
+        while (numToCheck <= n) {
+              boolean isPrime = true;
+              int val = 2;
+              while (val * val <= numToCheck) {
+                    if(numToCheck % val == 0) {
+                          isPrime = false;
+                          break;
+                    }
+                    val = val + 1;
+              }
+              if(isPrime == true) {
+                    count = count + 1;
+              }
+              numToCheck = numToCheck + 1;
+        }  
+        System.out.println(count);         
 		
 		
 	}
