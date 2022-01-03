@@ -49,6 +49,20 @@ public class Operators {
 //		System.out.println(false || true);
 //		System.out.println(a > b && c > b && a == c);
 
+		// Assignment Operator
+		a = 10;
+		a %= 5;
+		System.out.println(a);
+
+		// Ternary Operator
+		a = 10;
+		b = 20;
+//		char ch = false ? '/': '*';
+//		System.out.println(ch);
+		System.out.println( true ? "Hello" : "Hi");
+		System.out.println( false ? "Hello" : "Hi");
+		System.out.println( a > b ? "Hello" : "Hi");
+		System.out.println( a <= b ? "Hello" : "Hi");
 	}
 
 }
