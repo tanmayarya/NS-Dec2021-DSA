@@ -22,7 +22,7 @@ public class Input {
 //		System.out.println(f);
 		
 		String s = scn.next();
-		String s2= scn.nextLine();
+		String s2 = scn.nextLine();
 		System.out.println(s);
 		System.out.println(s2);
 	}
