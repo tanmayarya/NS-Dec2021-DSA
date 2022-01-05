@@ -46,18 +46,45 @@ public class Loops {
 //		
 //		System.out.println(result);
 		
+		
+		// print fibnacci upto n
 		int a = 0;
 		int b = 1;
 		int c = 1;
-		System.out.println(a);
-		System.out.println(b);
-		while(c <= n) {
-			
-			System.out.println(c);
-			a = b;
-			b = c;
-			c = a + b;
-		}
+		
+//		System.out.println(a);
+//		System.out.println(b);
+//		
+//		while(c <= n) {
+//			System.out.println(c);
+//			a = b;
+//			b = c;
+//			c = a + b;
+//		}
+		
+		// print nth fibnacci
+		// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 
+		
+		
+		
+//		if(n == 0) {
+//			System.out.println(0);
+//		} else if(n == 1) {
+//			System.out.println(1);
+//		} else {
+//			int count = 1;
+//			
+//			while(count < n) {
+//				c = a + b;
+//				a = b;
+//				b = c;
+//				count++;
+//			}
+//			System.out.println(c);
+//		}
+		
+	
+		
 	}
 
 }
