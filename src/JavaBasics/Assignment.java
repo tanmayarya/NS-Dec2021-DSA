@@ -21,6 +21,27 @@ public class Assignment {
 //		
 //		System.out.println(result);
 		
+		
+		// *************************************************
+		// odd even sum
+		
+		int place = 1, esum = 0, osum = 0;
+		
+		while(num > 0) {
+			int lastDigit = num % 10;
+			
+			if(place % 2 == 0) {
+				esum += lastDigit;
+			}else {
+				osum += lastDigit;
+			}
+			place++;
+			num /= 10;
+		}
+		
+		System.out.println(esum + ", " + osum);
+		
+		
 // *********************************************************
 		// pattern 3; right angle star
 		
