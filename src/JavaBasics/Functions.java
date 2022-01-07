@@ -52,7 +52,6 @@ public class Functions {
 		int n = scn.nextInt();
 		int r = scn.nextInt();
 		
-		
 		System.out.println(calculateNCR(n, r));
 		 
 	}
