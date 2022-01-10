@@ -1,4 +1,4 @@
-package JavaBasics;
+package Arrays;
 
 import java.util.Scanner;
 
@@ -14,20 +14,24 @@ public class IntroToArrays {
 		
 		return sum;
 	}
+	
+	
 
 	public static void main(String[] args) {
 
-		Scanner scn = new Scanner(System.in);
-		int n = scn.nextInt();
-		int arr[] = new int[n];
+//		Scanner scn = new Scanner(System.in);
+//		int n = scn.nextInt();
+//		int arr[] = new int[n];
+//		
+//		
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scn.nextInt();
+//		}
+//		
+//		int sum = sumAllElements(arr);
+//		System.out.println(sum);
 		
 		
-		for(int i = 0; i < n; i++) {
-			arr[i] = scn.nextInt();
-		}
-		
-		int sum = sumAllElements(arr);
-		System.out.println(sum);
 //		
 //		for(int i = 0; i < n; i++) {
 //			System.out.println(arr[i]);
