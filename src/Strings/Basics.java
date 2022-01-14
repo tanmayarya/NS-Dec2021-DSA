@@ -50,5 +50,15 @@ public class Basics {
 		
 		for(int i = 0; i < arr2.length; i++) 
 			System.out.print(arr2[i] + " ");
+		
+		// comparison
+		String a = "Hello";
+		String b = "Hello";
+		String c = new String("Hello");
+		System.out.println();
+		System.out.println(a == b);
+		System.out.println(a == c);
+		System.out.println(a.equals(b));
+		System.out.println(a.equals(c));
 	}
 }
