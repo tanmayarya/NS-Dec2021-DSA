@@ -54,6 +54,8 @@ public class ArrayListIntro {
 		ArrayList<Integer> list2 = new ArrayList<Integer>();
 		list2.add(100000);
 		System.out.println(list2);
+		
+		//append another arraylist
 		list2.addAll(al);
 		System.out.println(list2);
 		
