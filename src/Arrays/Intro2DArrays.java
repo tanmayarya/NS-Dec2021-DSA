@@ -41,26 +41,33 @@ public class Intro2DArrays {
 		while (count < arr.length * arr[0].length) {
 			
 			// print left wall
-			for(int i = minr; i <= maxr; i++)
+			for(int i = minr; i <= maxr; i++) {
 				System.out.println(arr[i][minc]);
+				count++;
+			}
 			minc++;
 			
 			// print bottom wall
-			for(int i = minc; i <= maxc; i++)
+			for(int i = minc; i <= maxc; i++) {
 				System.out.println(arr[maxr][i]);
+				count++;
+			}
 			maxr--;
 			
 			// print right wall
-			for(int i = maxr; i >= minr; i--)
+			for(int i = maxr; i >= minr; i--) {
 				System.out.println(arr[i][maxc]);
+				count++;
+			}
 			maxc--;
 			
 			// print top wall
-			for(int i = maxc; i >= minc; i--)
+			for(int i = maxc; i >= minc; i--) {
 				System.out.println(arr[minr][i]);
+				count++;
+			}
 			minr++;
 			
-			count++;
 		}
 		
 		
