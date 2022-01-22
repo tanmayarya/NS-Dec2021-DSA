@@ -78,7 +78,8 @@ public class Basics {
 //		System.out.println(powerAdvance(4,3));
 //		System.out.println(fib(9));
 		
-		int a[] = {1,2,3,4,5,6};
-		printReverse(a, 0);
+//		int a[] = {1,2,3,4,5,6};
+//		printReverse(a, 0);
+		System.out.println(fact(5));
 	}
 }
