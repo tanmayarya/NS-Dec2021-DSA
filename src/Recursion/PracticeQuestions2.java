@@ -129,6 +129,73 @@ public class PracticeQuestions2 {
 		return pathsFromBottom + pathsFromRight;
 	}
 	
+	
+	public static void printMazePaths(int arr[][], int row, int col, String psf) {
+		
+		// positive base case
+		if(row == arr.length - 1 && col == arr[0].length - 1) {
+			System.out.println(psf);
+		}
+		if(row == arr.length || col == arr[0].length) return;
+		
+		printMazePaths(arr, row, col+1, psf + "R");
+		printMazePaths(arr, row + 1, col, psf + "D");
+		
+	}
+	
+	
+	public static void printMazePathsAllDirections(int arr[][], int row, int col, String psf) {
+		
+		// positive base case
+		if(row == arr.length - 1 && col == arr[0].length - 1) {
+			System.out.println(psf);
+			return;
+		}
+		// check index out of bound
+		if(row == arr.length || col == arr[0].length || row < 0 || col < 0) return;
+		
+		// check if visited
+		if(arr[row][col] == 1) return;
+		
+		// mark visited
+		arr[row][col] = 1;
+		
+		printMazePathsAllDirections(arr, row, col + 1, psf + "R");
+		printMazePathsAllDirections(arr, row + 1, col, psf + "D");
+		printMazePathsAllDirections(arr, row - 1, col, psf + "U");
+		printMazePathsAllDirections(arr, row, col - 1, psf + "L");
+	
+		// marked as unvisited
+		arr[row][col] = 0;
+	}
+	
+	
+	// source is A, destination = B, helper is C
+	public static void towerOfHanoi(int n, char source, char destination, char helper) {
+		if(n == 0) return;
+		
+		towerOfHanoi(n - 1, source, helper, destination);
+		System.out.println("move Disc " + n + " from " + source + " to " + destination);
+		towerOfHanoi(n - 1, helper, destination, source);
+	}
+	
+	public static void printPattern(int n, int curr, boolean flag)
+	{
+		if((n > 0 && curr < 0) || (n < 0 && curr > 0)) {
+			System.out.print(curr + " ");
+			return;
+		}
+		 
+		System.out.print(curr + " ");
+		
+		//recursive call
+		if(n > 0) printPattern(n, curr - 5, flag);
+		else printPattern(n, curr + 5, flag);
+		
+		System.out.print(curr + " ");
+		
+	}
+	
 	public static void main(String[] args) {
 		
 //		ArrayList<String> l = subSequence("abc");
@@ -147,8 +214,12 @@ public class PracticeQuestions2 {
 //		for(String path : res) {
 //			System.out.println(path);
 //		}
-		arr[0][0] =1;
-		System.out.println(countHurdleMazePath(arr, 0, 0));
+//		arr[0][0] =1;
+//		System.out.println(countHurdleMazePath(arr, 0, 0));
+		
+//		printMazePathsAllDirections(arr, 0, 0, "");
+//		towerOfHanoi(3, 'A', 'B', 'C');
+		printPattern(16, 16, true);
 	}
 
 }
