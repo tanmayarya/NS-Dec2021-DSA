@@ -181,12 +181,12 @@ public class PracticeQuestions2 {
 	
 	public static void printPattern(int n, int curr, boolean flag)
 	{
-		if((n > 0 && curr < 0) || (n < 0 && curr > 0)) {
-			System.out.print(curr + " ");
+		if((n > 0 && curr <= 0) || (n < 0 && curr >= 0)) {
+			System.out.println(curr + " ");
 			return;
 		}
 		 
-		System.out.print(curr + " ");
+		System.out.println(curr + " ");
 		
 		//recursive call
 		if(n > 0) printPattern(n, curr - 5, flag);
