@@ -1,5 +1,7 @@
 package Arrays;
 
+import java.util.Arrays;
+
 public class Sorting {
 	
 	public static void insertionSort(int arr[]) {
@@ -95,6 +97,36 @@ public class Sorting {
 		return res;
 	}
 	
+	
+	public static int partition(int arr[], int pivot, int lo, int hi) {
+		// 0 to j-1 <=3
+		// j to i-1 >3
+		// i to n-1 unknown
+		int i = lo, j = lo;
+		while(i <= hi) {
+			if(arr[i] <= pivot) {
+				swap(arr, i, j);
+				i++;
+				j++;
+			}
+			else {
+				i++;
+			}
+		}
+		return j - 1;
+	}
+	
+	public static void quickSort(int arr[], int lo, int hi) {
+		if(lo >= hi) return;
+		
+		int pivot = arr[hi];
+		int pivotIndex = partition(arr, pivot, lo, hi);
+		
+		quickSort(arr, lo, pivotIndex - 1);
+		quickSort(arr, pivotIndex + 1, hi);
+		
+	}
+	
 	public static void swap(int arr[], int i, int j) {
 		int temp = arr[i];
 		arr[i] = arr[j];
@@ -117,7 +149,12 @@ public class Sorting {
 		display(arr);
 //		display(arr2);
 //		display(merge(arr, arr2));;
-		display(mergeSort(arr, 0, arr.length - 1));
+//		display(mergeSort(arr, 0, arr.length - 1));
+//		display(arr);
+		
+//		System.out.println(partition(arr, 4, 0, arr.length - 1));
+//		display(arr);
+//		quickSort(arr, 0, arr.length - 1);
 		display(arr);
 	}
 }
