@@ -23,6 +23,7 @@ public class Basics {
 		
 		for(int i = 2; i * i <= n; i++) {
 			if(seive[i] == true) {
+				// turning all the factors of i to false
 				for(int j = i*2; j <= n; j+=i) {
 					seive[j] = false;
 				}
@@ -37,7 +38,7 @@ public class Basics {
 		boolean seive[]= seiveOfE(30);
 		
 		for(int i = 0; i < seive.length; i++) {
-			System.out.println(i + " ->" + seive[i]);
+			System.out.println(i + " -> " + seive[i]);
 		}
 	}
 }
