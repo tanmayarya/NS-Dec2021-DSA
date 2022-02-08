@@ -45,9 +45,30 @@ public class BinarySearchIntro {
 		return ans;
 	}
 	
+	public static int ternarySearch(int arr[], int val) {
+		int left = 0, right = arr.length - 1;
+		
+		while(left <= right) {
+			int m1 = left + (right - left)/3;
+			int m2 = right - (right - left)/3;
+			
+			if(arr[m1] == val) return m1;
+			else if(arr[m2] == val) return m2; 
+			else if(val < arr[m1]) {
+				right = m1 - 1;
+			} else if(val > arr[m2]) {
+				left = m2 + 1;
+			}else {
+				left = m1 + 1;
+				right = m2 - 1;
+			}
+		}
+		return -1;
+	}
+	
 	public static void main(String[] args) {
 		int arr[] = {1,2,3,4,5,6,7,8,9,10};
-		System.out.println(binarySearch(arr, 11));
+		System.out.println(ternarySearch(arr, 8));
 	}
 
 }
