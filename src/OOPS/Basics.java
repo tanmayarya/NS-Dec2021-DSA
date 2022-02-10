@@ -5,8 +5,9 @@ class Student {
 	int rollNo;
 	
 	public Student() {
-		this.name = "Hitesh";
-		this.rollNo = 10;
+//		this.name = "Hitesh";
+//		this.rollNo = 10;
+		this("Hitesh", 10);
 	}
 	
 	public Student(String name, int rollNo) {
@@ -54,6 +55,9 @@ public class Basics {
 		String s= new String();
 		int a[] = new int[1];
 		
+		final int ab;
+		ab = 1;
+//		ab = 3;
 //		a.length -> property of a
 //		s.length() -> function of String class
 		
