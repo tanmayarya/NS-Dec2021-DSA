@@ -62,6 +62,8 @@ public class Polymorphism {
 //		 A obj2 = new A();
 //		 obj2.print();
 		 
+		 // method of B class will be called and this is called
+		 // Dynamic method dispatch
 		 A obj3 = new B();
 		 obj3.print();
 		 

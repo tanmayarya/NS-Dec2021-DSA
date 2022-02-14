@@ -19,7 +19,7 @@ public class Basics {
 		System.out.println(n);
 	}
 	
-	public static int fact(int n) {
+	 static int fact(int n) {
 		if(n == 0) return 1;
 		
 		int res = n * fact(n-1);
