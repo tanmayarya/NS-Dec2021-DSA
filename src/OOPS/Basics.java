@@ -7,7 +7,7 @@ class Student {
 	public Student() {
 //		this.name = "Hitesh";
 //		this.rollNo = 10;
-		this("Hitesh", 10);
+//		this("Hitesh", 10);
 	}
 	
 	public Student(String name, int rollNo) {

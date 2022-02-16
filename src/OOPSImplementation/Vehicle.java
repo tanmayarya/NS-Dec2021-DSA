@@ -7,4 +7,8 @@ public interface Vehicle {
 	void stop();
 	void accelerate(int speed);
 	void brake();
+	
+	default void fun() {
+		System.out.println("default method");
+	}
 }

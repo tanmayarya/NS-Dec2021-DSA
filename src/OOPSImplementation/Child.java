@@ -1,5 +1,5 @@
 package OOPSImplementation;
 
-public class Child {
+public class Child implements Father, Mother {
 
 }
