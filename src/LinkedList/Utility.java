@@ -10,6 +10,14 @@ public class Utility {
 		ll.addFirst(20);
 		ll.addFirst(10);
 		
+		
+		ll.addLast(60);
 		ll.display();
+		ll.add(90, 2);
+		ll.display();
+		System.out.println(ll.get(2));
+		ll.set(100, 1);
+		ll.display();
+		
 	}
 }
