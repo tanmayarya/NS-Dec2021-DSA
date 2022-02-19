@@ -18,6 +18,17 @@ public class Utility {
 		System.out.println(ll.get(2));
 		ll.set(100, 1);
 		ll.display();
+		ll.remove(2);
+		ll.display();
+		ll.remove(5);
+		ll.display();
+		ll.reverseDI();
+		ll.display();
+		ll.reversePI();
+		ll.display();
+		ll.reversePR();
+		ll.display();
+		ll.reverseDR();
 		
 	}
 }

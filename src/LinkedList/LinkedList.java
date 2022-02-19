@@ -89,10 +89,23 @@ public class LinkedList {
 		return temp;
 	}
 	
+	// Time Complexity: O(1)
 	public void removeFirst() {
 		if(isEmpty()) return;
 		if(this.size == 1) this.tail = null;
 		this.head = this.head.next;
+		this.size--;
+	}
+	
+	// Time Complexity: O(n)
+	public void remove(int idx) {
+		if(idx == 0) {
+			removeFirst();
+			return;
+		}
+		Node n = getNode(idx - 1);
+		n.next = n.next.next;
+		if(idx == this.size - 1) this.tail = n;
 		this.size--;
 	}
 	
@@ -112,4 +125,78 @@ public class LinkedList {
 		System.out.println("null");
 	}
 	
+	private void swap(Node one, Node two) {
+		int temp = one.data;
+		one.data = two.data;
+		two.data = temp;
+	}
+	
+	
+	private void swapHeadTail() {
+		Node temp = this.head;
+		this.head = this.tail;
+		this.tail = temp;
+	}
+	
+	// Time Complexity: O(n*n)
+	public void reverseDI() {
+		int l = 0, r = this.size - 1;
+		Node lNode, rNode;
+		
+		while(l < r) {
+			lNode = getNode(l);
+			rNode = getNode(r);
+			
+			//swap
+			swap(lNode, rNode);
+			l++;
+			r--;
+		}
+	}
+
+	// Time Complexity: O(n)
+	public void reversePI() {
+		Node p = null, c = this.head, n;
+		
+		while(c != null) {
+			n = c.next;
+			c.next = p;
+			p = c;
+			c = n;
+		}
+		swapHeadTail();
+	}
+	
+	public void reversePR() {
+		reversePR(this.head);
+		swapHeadTail();
+		this.tail.next = null;
+	}
+	
+	// Time Complexity: O(n)
+	private void reversePR(Node n) {
+		if(n == tail) return;
+		
+		reversePR(n.next);
+		n.next.next = n;
+	}
+	
+	// created for reverse DR function
+	private Node left;
+	
+	public void reverseDR() {
+		left = this.head;
+		reverseDR(this.head, 0);
+	}
+	
+	// Time Complexity: O(n)
+	private void reverseDR(Node right, int ri) {
+		if(right == null) return;
+		
+		reverseDR(right.next, ri + 1);
+		if(ri >= this.size/2) {
+			swap(left, right);
+			left = left.next;
+		}
+	}
 }
