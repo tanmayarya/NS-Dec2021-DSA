@@ -199,4 +199,84 @@ public class LinkedList {
 			left = left.next;
 		}
 	}
+
+	public int getMid() {
+		Node slow = this.head, fast = this.head.next;
+		
+		while(fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		
+		return slow.data;
+	}
+	
+	public void removeDuplicatesInSortedList() {
+		Node temp = this.head;
+		
+		while(temp != null && temp.next != null) {
+			if(temp.data == temp.next.data) {
+				temp.next = temp.next.next;
+				this.size--;
+			} else {
+				temp = temp.next;
+			}
+		}
+	}
+	
+	public static LinkedList merge2SortedLL(LinkedList one, LinkedList two) {
+		LinkedList res = new LinkedList();
+		
+		Node o = one.head, t = two.head;
+		
+		// case for first element
+		if(o.data < t.data) {
+			res.tail = o;
+			res.head = o;
+			res.size = 1;
+			o = o.next;
+		}
+		else {
+			res.tail = t;
+			res.head = t;
+			res.size = 1;
+			t = t.next;
+		}
+		
+		while(o != null && t != null) {
+			if(o.data < t.data) {
+				res.tail.next = o;
+				res.tail = o;
+				res.size++;
+				o = o.next;
+			} else {
+				res.tail.next = t;
+				res.tail = t;
+				res.size++;
+				t = t.next;
+			}
+		}
+		
+		// handle the remaining elements of 1 list
+		if(o == null) {
+			res.tail.next = t;
+			while(t != null) {
+				res.tail = t;
+				res.size++;
+				t = t.next;
+			}
+		} else {
+			res.tail.next = o;
+			while(o != null) {
+				res.tail = o;
+				res.size++;
+				o = o.next;
+			}
+		}
+		
+		
+		return res;
+	} 
+	
+	
 }
