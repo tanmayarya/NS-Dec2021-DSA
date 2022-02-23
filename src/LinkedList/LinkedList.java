@@ -1,18 +1,18 @@
 package LinkedList;
 
-public class LinkedList {
+class Node {
+	int data;
+	Node next;
 	
-	private class Node {
-		int data;
-		Node next;
-		
-		Node() {}
-		
-		Node(int data, Node next) {
-			this.data = data;
-			this.next = next;
-		}
+	Node() {}
+	
+	Node(int data, Node next) {
+		this.data = data;
+		this.next = next;
 	}
+}
+
+public class LinkedList {
 	
 	private Node head;
 	private Node tail;
@@ -46,6 +46,19 @@ public class LinkedList {
 		this.size++;
 	}
 	
+	public void addLast(Node node) {
+		if(this.isEmpty()) {
+			this.head = node;
+			this.tail = node;
+			this.size++;
+		} else {
+			this.tail.next = node;
+			this.tail = node;
+			this.size++;
+		}
+	}
+	
+	
 	// Time Complexity: O(n)
 	public void add(int data, int idx) {
 		if(idx == 0) {
@@ -77,7 +90,7 @@ public class LinkedList {
 	}
 	
 	// Time Complexity: O(n)
-	private Node getNode(int idx) {
+	Node getNode(int idx) {
 		if(idx >= this.size) return null;
 		if(idx == this.size - 1) return this.tail;
 		int tempIdx = 0;
@@ -90,23 +103,27 @@ public class LinkedList {
 	}
 	
 	// Time Complexity: O(1)
-	public void removeFirst() {
-		if(isEmpty()) return;
+	public Node removeFirst() {
+		if(isEmpty()) return null;
 		if(this.size == 1) this.tail = null;
+		Node nodeToBeRemoved = this.head;
 		this.head = this.head.next;
 		this.size--;
+		return nodeToBeRemoved;
 	}
 	
 	// Time Complexity: O(n)
-	public void remove(int idx) {
+	public Node remove(int idx) {
 		if(idx == 0) {
-			removeFirst();
-			return;
+			return removeFirst();
+			
 		}
 		Node n = getNode(idx - 1);
+		Node nodeToBeRemoved = n.next;
 		n.next = n.next.next;
 		if(idx == this.size - 1) this.tail = n;
 		this.size--;
+		return nodeToBeRemoved;
 	}
 	
 	// Time Complexity: O(1)
@@ -277,6 +294,60 @@ public class LinkedList {
 		
 		return res;
 	} 
+	
+	public void oddEven() {
+		LinkedList odd = new LinkedList();
+		LinkedList even = new LinkedList();
+		
+		while(this.isEmpty() != true) {
+			Node node = this.removeFirst();
+			if(node.data % 2 == 0) { // add in even list
+				even.addLast(node);
+			} else { // add in oddList
+				odd.addLast(node);
+			}
+		}
+		
+		odd.tail.next = even.head;
+		this.head = odd.head;
+		this.tail = even.tail;
+		this.size = odd.size + even.size;
+	}
+	
+	
+	public boolean isPalindrome() {
+		left = this.head;
+		return isPalindrome(this.head, 0); 
+	}
+	
+	private boolean isPalindrome(Node right, int ri) {
+		if(right == null) return true;
+		
+		boolean outerResult = isPalindrome(right.next, ri + 1);
+		if(ri < this.size / 2) return outerResult;
+		if(outerResult == true && left.data == right.data) {
+			left = left.next;
+			return true;
+		}
+		return false;
+			
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

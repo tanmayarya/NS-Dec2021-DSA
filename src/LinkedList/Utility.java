@@ -38,19 +38,31 @@ public class Utility {
 		LinkedList ll2 = new LinkedList();
 		ll2.addLast(1);
 		ll2.addLast(2);
+		ll2.addLast(3);
+		ll2.addLast(4);
 		ll2.addLast(5);
 //		ll2.display();
 //		ll2.removeDuplicatesInSortedList();
 		ll2.display();
 		
+//		LinkedList ll3 = new LinkedList();
+//		ll3.addLast(0);
+//		ll3.addLast(3);
+//		ll3.addLast(3);
+//		ll3.addLast(4);
+//		ll3.addLast(6);
+//		ll3.display();
+//		LinkedList.merge2SortedLL(ll2, ll3).display();
+		
+		
 		LinkedList ll3 = new LinkedList();
-		ll3.addLast(0);
+		ll3.addLast(1);
+		ll3.addLast(2);
 		ll3.addLast(3);
-		ll3.addLast(3);
-		ll3.addLast(4);
-		ll3.addLast(6);
+		ll3.addLast(2);
+		ll3.addLast(2);
 		ll3.display();
-		LinkedList.merge2SortedLL(ll2, ll3).display();
+		System.out.println(ll3.isPalindrome());
 		
 	}
 }
