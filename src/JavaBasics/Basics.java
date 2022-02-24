@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Basics {
 	
 	public static void main(String[] args) {
-	
-/*		System.out.print("Hello Newton School");
+
+		/*		System.out.print("Hello Newton School");
 		
 		System.out.println("Welcome everyone");
 		
