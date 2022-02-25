@@ -1,6 +1,7 @@
 package HashMap;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -63,6 +64,36 @@ public class Introduction {
 		
 		map.forEach((k, v) -> {
 			System.out.println(k + v);
+		});
+		
+		HashSet<Integer> set = new HashSet<>();
+		
+		// add element
+		set.add(2);
+		set.add(3);
+		set.add(5);
+		set.add(1);
+		set.add(5);
+		
+		System.out.println(set);
+		
+		// check element
+		System.out.println(set.contains(6));
+		
+		// remove
+		set.remove(5);
+		
+		System.out.println(set);
+		
+		System.out.println(set.isEmpty());
+		System.out.println(set.size());
+		
+		for(Integer element : set) {
+			System.out.println(element);
+		}
+		
+		set.forEach((el) -> {
+			System.out.println(el + " in for each ");
 		});
 	}
 }
