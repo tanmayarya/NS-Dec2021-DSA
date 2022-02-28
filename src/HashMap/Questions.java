@@ -2,6 +2,7 @@ package HashMap;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Scanner;
 
 public class Questions {
 	
@@ -65,15 +66,32 @@ public class Questions {
 		
 	}
 	
+	public static void uncommonElements(int arr1[], int arr2[]) {
+		HashMap<Integer, Integer> map = new HashMap<>();
+		for(int elem : arr1) {
+			map.put(elem, 1); // only in first array
+		}
+		
+		for(int elem : arr2) {
+			if(map.containsKey(elem) && map.get(elem) != 2) {
+				map.put(elem, 3); // common element
+			}else map.put(elem, 2); // only in arr2
+		}
+		
+		map.forEach((k, v) -> {
+			if(v != 3) System.out.println(k);
+		});
+	}
+	
 	
 	public static void main(String[] args) {
-		maxFreqCharacter("newton school");
+//		maxFreqCharacter("newton school");
 		
 		int arr1[] = {1, 5, 2, 9, 3, 2, 5, 1, 1};
 		int arr2[] = {1, 6, 3, 10, 3, 1, 3, 2};
 		
 //		commonElements1(arr1, arr2);
-		commonElements2(arr1, arr2);
-		
+//		commonElements2(arr1, arr2);
+		uncommonElements(arr1, arr2);		
 	}
 }
