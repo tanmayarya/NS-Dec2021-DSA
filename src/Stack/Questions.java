@@ -53,9 +53,34 @@ public class Questions {
 				
 	}
 	
+	public static int[] nextGreaterElementOnRight(int arr[]) {
+		int res[] = new int[arr.length];
+		Stack<Integer> st = new Stack<Integer>();
+		
+		for(int i = 0; i < arr.length; i++) {
+			
+			while(!st.isEmpty() && arr[st.peek()] < arr[i]) {
+				int popedIdx = st.pop();
+				res[popedIdx] = arr[i];
+			}
+			
+			st.push(i);
+		}
+		
+		while(!st.isEmpty()) {
+			int popedIdx = st.pop();
+			res[popedIdx] = -1;
+		} 
+		
+		return res;
+	}
+	
 	public static void main(String[] args) {
-		System.out.println(duplicateBrackets("(((a+b)) + c + (d+f))"));
-		System.out.println(balancedBrackets("{[()]()]"));
+//		System.out.println(duplicateBrackets("(((a+b)) + c + (d+f))"));
+//		System.out.println(balancedBrackets("{[()]()]"));
+		int arr[] = {3, 5, 11, 7, 6, 5, 1, 4, 8};
+		int res[] = nextGreaterElementOnRight(arr);
+		for(int i = 0; i < arr.length; i++) System.out.println(arr[i] + " -> " + res[i]);
 		
 	}
 
