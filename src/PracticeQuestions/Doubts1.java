@@ -7,7 +7,7 @@ public class Doubts1 {
 		int ans = Integer.MAX_VALUE;
 		for(int i = 0; i < s.length() - 25; i++) {
 			if(s.charAt(i) == 'a') {
-				int charToSearch = 'b';
+				char charToSearch = 'b';
 				for(int j = i+1; j < s.length() - (25 - charToSearch + 'a'); j++) {
 					if(s.charAt(j) == charToSearch) {
 						if(charToSearch == 'z') {
